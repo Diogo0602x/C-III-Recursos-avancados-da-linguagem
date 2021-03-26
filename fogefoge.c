@@ -5,6 +5,13 @@ char** mapa;
 int linhas;
 int colunas;
 
+void liberamapa() {
+    for(int i = 0; i < linhas; i++){
+        free(mapa[i]);
+    }
+    free(mapa);
+}
+
 int main() {    
 
     FILE* f;
