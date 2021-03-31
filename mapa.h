@@ -19,3 +19,9 @@ struct posicao {
 typedef struct posicao POSICAO;
 
 void encontramapa(MAPA* m, POSICAO* p, char c);
+
+int ehValida(MAPA* m, int x, int y);
+int ehVazia(MAPA* m, int x, int y);
+
+void andanomapa(MAPA* m, int xorigem, int yorigem, 
+	int xdestino, int ydestino);

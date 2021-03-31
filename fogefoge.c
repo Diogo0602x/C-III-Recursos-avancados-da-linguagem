@@ -1,29 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <time.h>
 #include "fogefoge.h"
 #include "mapa.h"
 
 MAPA m;
 POSICAO heroi;
 
+
 int acabou() {
 	return 0;
 }
 
+int ehDirecao(char direcao) {
+	return
+		direcao == 'a' || 
+		direcao == 'w' ||
+		direcao == 's' ||
+		direcao == 'd';
+}
+
 void move(char direcao) {
 
-	if(direcao != 'a' &&
-		direcao != 'w' &&
-		direcao != 's' &&
-		direcao != 'd')
+	if(!ehDirecao(direcao))	
 		return;
 
 	int proximox = heroi.x;
 	int proximoy = heroi.y;
-
-	m.matriz[heroi.x][heroi.y] = '.';
 
 	switch(direcao) {
 		case 'a':
@@ -40,18 +42,15 @@ void move(char direcao) {
 			break;
 	}
 
-	if(proximox >= m.linhas)
+	if(!ehValida(&m, proximox, proximoy))
 		return;
-	if(proximox >= m.colunas)
+
+	if(!ehVazia(&m, proximox, proximoy))
 		return;
-	if(m.matriz[proximox][proximoy] != '.')
-		return;
-	
-	m.matriz[proximox][proximoy] = '@';
-	m.matriz[heroi.x][heroi.y] = '.';
+
+	andanomapa(&m, heroi.x, heroi.y, proximox, proximoy);
 	heroi.x = proximox;
 	heroi.y = proximoy;
-
 }
 
 int main() {
