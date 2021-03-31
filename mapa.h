@@ -2,6 +2,7 @@
 #define VAZIO '.'
 #define PAREDE_VERTICAL '|'
 #define PAREDE_HORIZONTAL '-'
+#define FANTASMA 'F'
 
 struct mapa {
 	char** matriz;
@@ -25,8 +26,10 @@ typedef struct posicao POSICAO;
 
 void encontramapa(MAPA* m, POSICAO* p, char c);
 
-int ehValida(MAPA* m, int x, int y);
-int ehVazia(MAPA* m, int x, int y);
+int ehvalida(MAPA* m, int x, int y);
+int ehvazia(MAPA* m, int x, int y);
 
 void andanomapa(MAPA* m, int xorigem, int yorigem, 
 	int xdestino, int ydestino);
+
+void copiamapa(MAPA* destino, MAPA* origem);
