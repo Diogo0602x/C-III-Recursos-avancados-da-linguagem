@@ -6,13 +6,18 @@
 MAPA m;
 POSICAO heroi;
 
+
 int acabou() {
 	return 0;
 }
 
 void move(char direcao) {
-	int x;
-	int y;
+
+	if(direcao != 'a' &&
+		direcao != 'w' &&
+		direcao != 's' &&
+		direcao != 'd')
+		return;
 
 	m.matriz[heroi.x][heroi.y] = '.';
 
@@ -34,7 +39,7 @@ void move(char direcao) {
 			heroi.y++;
 			break;
 	}
-
+	
 }
 
 int main() {
