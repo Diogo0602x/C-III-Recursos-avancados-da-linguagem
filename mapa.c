@@ -67,6 +67,11 @@ void encontramapa(MAPA* m, POSICAO* p, char c) {
 
 }
 
+int podeandar(MAPA* m, int x, int y) {
+	return 
+		ehvalida(m, x, y) && 
+		ehvazia(m, x, y);
+}
 
 int ehvalida(MAPA* m, int x, int y) {
 	if(x >= m->linhas) 
