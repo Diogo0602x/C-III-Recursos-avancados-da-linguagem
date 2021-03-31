@@ -8,7 +8,6 @@ void liberamapa() {
 	for(int i = 0; i < m.linhas; i++) {
 		free(m.matriz[i]);
 	}
-
 	free(m.matriz);
 }
 
