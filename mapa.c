@@ -67,7 +67,7 @@ int ehValida(MAPA* m, int x, int y) {
 }
 
 int ehVazia(MAPA* m, int x, int y) {
-	return m->matriz[x][y] == '.';
+	return m->matriz[x][y] == VAZIO;
 }
 
 void andanomapa(MAPA* m, int xorigem, int yorigem, 
@@ -75,6 +75,6 @@ void andanomapa(MAPA* m, int xorigem, int yorigem,
 
 	char personagem = m->matriz[xorigem][yorigem];
 	m->matriz[xdestino][ydestino] = personagem;
-	m->matriz[xorigem][yorigem] = '.';
+	m->matriz[xorigem][yorigem] = VAZIO;
 
 }
