@@ -4,6 +4,8 @@
 #include "mapa.h"
 
 MAPA m;
+int x;
+int y;
 
 int acabou() {
 	return 0;
