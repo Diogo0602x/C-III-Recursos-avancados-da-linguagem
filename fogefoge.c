@@ -6,7 +6,6 @@
 MAPA m;
 POSICAO heroi;
 
-
 int acabou() {
 	return 0;
 }
@@ -39,7 +38,6 @@ void move(char direcao) {
 			heroi.y++;
 			break;
 	}
-	
 }
 
 int main() {
