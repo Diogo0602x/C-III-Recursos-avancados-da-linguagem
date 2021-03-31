@@ -3,9 +3,8 @@
 #define DIREITA 'd'
 #define ESQUERDA 'a'
 
-
-void move(char direcao);
 int acabou();
-
-int ehDirecao(char direcao);
+void move(char direcao);
+ 
+int ehdirecao(char direcao);
 void fantasmas();
