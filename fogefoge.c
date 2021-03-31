@@ -23,8 +23,7 @@ int ehdirecao(char direcao) {
 		direcao == ESQUERDA || 
 		direcao == CIMA ||
 		direcao == BAIXO ||
-		direcao == DIREITA;
-		
+		direcao == DIREITA;	
 }
 
 void move(char direcao) {
