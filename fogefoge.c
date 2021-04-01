@@ -108,6 +108,14 @@ void fantasmas() {
 
 void explodepilula() {
 
+	for(int i = 1; i <= 3; i++) {
+		if(ehvalida(&m, heroi.x, heroi.y+i)) {
+			if(ehparede(&m, heroi.x, heroi.y+1)) break;
+
+			m.matriz[heroi.x][heroi.y+i] = VAZIO;
+		}
+	}
+
 }
 
 int main() {
@@ -123,7 +131,7 @@ int main() {
 		scanf(" %c", &comando);
 
 		if(ehdirecao(comando)) move(comando);
-		if(comando == 'B') explodepilula();
+		if(comando == BOMBA) explodepilula();
 
 		fantasmas();
 
