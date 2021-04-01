@@ -9,4 +9,4 @@ void move(char direcao);
  
 int ehdirecao(char direcao);
 void fantasmas();
-void explodepilula();
+void explodepilula(int x, int y, int qtd);
